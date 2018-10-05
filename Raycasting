@@ -14,11 +14,11 @@ public class RaycastingExampleScript : MonoBehaviour {
 	void Update () {
         Ray ray = new Ray(transform.position, transform.forward);
 
-        if (Physics.Raycast(ray, out hit, 2f)) // This is for when the ray makes contact with another gameObject
+        if (Physics.Raycast(ray, out hit, 2f)) // Checks if the ray makes contact with another gameObject
         {
             Debug.DrawLine(ray.origin, hit.point, Color.red);
         }
-        else // This is for when the ray does not make contact with another gameObject
+        else // Checks if the ray does not make contact with another gameObject
         {
             Debug.DrawLine(ray.origin, ray.origin + ray.direction * 2f, Color.green);
         }
