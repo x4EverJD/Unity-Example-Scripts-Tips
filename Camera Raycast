@@ -1,0 +1,26 @@
+/*
+  This example script shows how to create a raycast from a "Camera" in Unity
+*/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CameraRaycastExampleScript : MonoBehaviour {
+    public Camera mainCamera;
+    RaycastHit hit;
+
+	// Update is called once per frame
+	void Update () {
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 2f)) // Checks if the ray makes contact with another gameObject
+        {
+            Debug.DrawLine(ray.origin, hit.point, Color.red);
+        }
+        else // Checks if the ray does not make contact with another gameObject
+        {
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 2f, Color.green);
+        }
+    }
+}
