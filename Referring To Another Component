@@ -1,0 +1,42 @@
+/*
+    These example scripts show how to refer to a variable from another script
+    
+    But in general, you can refer to any component from another gameObject
+*/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Script1 : MonoBehaviour
+{
+
+    public GameObject bank; // "Script2" script is initially attached to this gameObject
+
+    private Script2 otherScriptToAccess; // Assigning "Script2" script to this variable
+    
+    public float withdrawal;
+    
+    // Use this for initialization
+    void Start()
+    {
+        otherScriptToAccess = bank.GetComponent<Script2>(); // Accessing "Script2" script from the "bank" gameObject
+    }
+    
+    // Update is called once per frame
+    void Update()
+    {
+        withdrawal = otherScriptToAccess.accountAmount; // Accessing the "accountAmount" variable from the "Script2" script and assigning its value to the "withdrawal" variable in the "Script1" script
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Script2 : MonoBehaviour {
+
+    public float accountAmount = 36.00f;
+}
