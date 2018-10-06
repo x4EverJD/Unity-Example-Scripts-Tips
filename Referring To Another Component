@@ -11,7 +11,7 @@ using UnityEngine;
 public class Script1 : MonoBehaviour
 {
 
-    public GameObject bank; // "Script2" script is initially attached to this gameObject
+    public GameObject bank; // "Script2" script is attached to this gameObject
 
     private Script2 otherScriptToAccess; // Assigning "Script2" script to this variable
     
