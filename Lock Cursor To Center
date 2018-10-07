@@ -1,0 +1,17 @@
+/*
+  This example script shows how to lock the mouse cursor to the center of the scene view
+*/
+
+using UnityEngine;
+using System.Collections;
+
+public class LockCursorToCenter : MonoBehaviour
+{
+    CursorLockMode lockedToCenter;
+
+    // Apply requested cursor state
+    void SetCursorState()
+    {
+        Cursor.lockState = lockedToCenter;
+    }
+}
