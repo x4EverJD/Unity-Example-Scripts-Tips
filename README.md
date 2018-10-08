@@ -1,2 +1,2 @@
-# Unity-Scripts
-This repository is filled with example scripts for things that can be done in the Unity Game Engine.
+# Tips
+This branch is filled with tips that can be used in the Unity Game Engine and Microsoft Visual Studio.
