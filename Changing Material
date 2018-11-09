@@ -1,0 +1,52 @@
+/*
+  This example script shows how to change between different materials on a gameObject in Unity
+*/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChangeMaterialExampleScript : MonoBehaviour
+{
+
+    public Material[] materials; // Array holding all the materials for the gameObject
+
+    private Renderer rend;
+
+    private bool changeMaterial = true;
+
+    public float timer = 100f;
+
+    // Use this for initialization
+    void Start()
+    {
+        rend = GetComponent<Renderer>();
+
+        rend.enabled = true;
+
+        rend.sharedMaterial = materials[0]; // Sets the material that is correspondent to the value inside the brackets
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        timer--;
+
+        if (timer <= 0 && changeMaterial == true)
+        {
+            rend.sharedMaterial = materials[1]; // Changes to the material that is correspondent to the value inside the brackets
+
+            timer = 100f;
+
+            changeMaterial = false;
+        }
+        else if (timer <= 0 && changeMaterial == false)
+        {
+            rend.sharedMaterial = materials[0]; // Reverts back to the initial material
+
+            timer = 100f;
+
+            changeMaterial = true;
+        }
+    }
+}
